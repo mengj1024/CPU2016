@@ -121,7 +121,13 @@ public class Assembler {
                     program.add(Integer.toHexString(14 + (toRegIndex(rd)<<6) + (toRegIndex(rd)<<11)));
                     break;
                 case "hlt":
-                    program.add("f");
+                    program.add(Integer.toHexString(15));
+                    break;
+                case "push":
+                    program.add(Integer.toHexString(16 + (toRegIndex(rd)<<11)));
+                    break;
+                case "pop":
+                    program.add(Integer.toHexString(17));
                     break;
                 default:
                     break;

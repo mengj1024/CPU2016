@@ -1,6 +1,6 @@
 reset:
-    ldi r0, 0
-    ldi r1, 1
+    ldi r10, 4095
+    out 4, r10
 
 main:
     input_loop:
