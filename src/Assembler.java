@@ -23,7 +23,9 @@ public class Assembler {
         assemble();
         reader.close();
 
-        writer = new BufferedWriter(new FileWriter("logi_prog"));
+        String[] t = filename.split(".asm");
+        String outputFile = t.length == 1 ? t[0] : filename;
+        writer = new BufferedWriter(new FileWriter(outputFile+".lgs"));
         writer.write("v2.0 raw\n");
         for(String op : program) {
             writer.write(op + "\n");
